@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/time_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:text="@string/times_up"/>
+
+    <RelativeLayout
+        android:id="@+id/timer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp">
+
+        <ProgressBar
+            android:id="@+id/timer_progress"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/circular"
+            android:progress="0"
+            android:secondaryProgress="100"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/time_remaining_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_remaining" />
+
+            <TextView
+                android:id="@+id/time_remaining_millis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/timer_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timer_layout"
+        android:padding="4dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/timer_edittext"
+            android:layout_marginStart="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:inputType="number" />
+
+        <Spinner
+            android:id="@+id/timer_spinner"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_below="@id/timer_options"
+        android:id="@+id/start_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/start_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
